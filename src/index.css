@@ -447,12 +447,15 @@ ul {
 }
 
 .grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-7);
 }
 
 .exp-card {
+  flex: 1 1 240px;
+  max-width: 360px;
   text-align: center;
 }
 
@@ -581,7 +584,7 @@ ul {
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-4);
 }
 
@@ -770,12 +773,14 @@ textarea.form-control {
 }
 
 .swatch-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-4);
 }
 
 .swatch {
+  flex: 1 1 180px;
+  max-width: 260px;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -895,19 +900,9 @@ textarea.form-control {
     display: none;
   }
 
-  .grid-3 {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+  .exp-card {
+    flex: 1 1 100%;
     max-width: 440px;
-    margin: 0 auto;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .swatch-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -942,10 +937,6 @@ textarea.form-control {
 }
 
 @media (max-width: 380px) {
-  .swatch-grid {
-    grid-template-columns: 1fr;
-  }
-
   .hero-cta {
     flex-direction: column;
     align-items: stretch;
