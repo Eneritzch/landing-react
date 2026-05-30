@@ -1,6 +1,6 @@
-# Rúbra — Landing de reserva de restaurante (React)
+# Cure — Landing de reserva de restaurante (React)
 
-Landing page para la **reserva de mesa** de un restaurante de cocina de autor,
+Landing page para la **reserva de mesa** de un restaurante de cocina de Eli,
 construida con **React + Vite**. Existe la [misma landing en Vue](../landing-vue)
 con un diseño idéntico.
 

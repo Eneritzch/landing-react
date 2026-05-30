@@ -9,7 +9,7 @@ export default function Experience() {
           <span className="eyebrow">La experiencia</span>
           <span className="divider" />
           <h2>Una mesa pensada en cada detalle</h2>
-          <p>Tres pilares que definen lo que vivirás en cada visita a Rúbra.</p>
+          <p>Tres pilares que definen lo que vivirás en cada visita a Cure.</p>
         </div>
 
         <div className="grid-3">

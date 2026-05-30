@@ -5,12 +5,12 @@ export default function Hero() {
     <section className="hero" id="inicio">
       <div className="container hero-inner">
         <div>
-          <span className="eyebrow">Cocina de autor</span>
+          <span className="eyebrow">Cocina de Eli</span>
           <h1>
             Reserva tu mesa y vive una <span className="hl">velada memorable</span>
           </h1>
           <p className="hero-sub">
-            En Rúbra cuidamos cada detalle: producto de temporada, maridajes
+            En Cure cuidamos cada detalle: producto de temporada, maridajes
             precisos y un ambiente íntimo. Asegura tu lugar en pocos segundos.
           </p>
           <div className="hero-cta">
@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="rescard" aria-hidden="true">
           <div className="rescard-bar" />
           <div className="rescard-top">
-            <span className="name">Rúbra</span>
+            <span className="name">Cure</span>
             <span className="badge">Confirmada</span>
           </div>
           <div className="rescard-body">

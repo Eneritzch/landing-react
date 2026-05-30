@@ -7,7 +7,7 @@ export const navLinks = [
 export const experience = [
   {
     icon: "utensils",
-    title: "Cocina de autor",
+    title: "Cocina de Eli",
     text: "Un menú de temporada creado por nuestro chef, que cambia con cada cosecha.",
   },
   {

@@ -88,7 +88,7 @@ export default function ReservationForm() {
       <div className="container reserve-inner">
         <div className="reserve-aside">
           <span className="eyebrow">Reserva tu mesa</span>
-          <h2>Te esperamos en Rúbra</h2>
+          <h2>Te esperamos en Cure</h2>
           <p>Completa el formulario y recibirás la confirmación de tu mesa al instante.</p>
           <ul className="reserve-list">
             {reservePerks.map((p) => (

@@ -15,7 +15,7 @@ export default function Navbar({ onNavigate }) {
       <div className="container nav-inner">
         <button className="brand" onClick={goHome}>
           <span className="brand-mark"><Icon name="utensils" size={18} /></span>
-          Rúbra
+          Cure
         </button>
 
         <nav>

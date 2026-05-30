@@ -53,7 +53,7 @@ export default function DesignSystem({ onNavigate }) {
         <button className="btn btn-ghost btn-sm" onClick={() => onNavigate("landing")}>
           <Icon name="arrow" size={16} /> Volver al landing
         </button>
-        <h1>Design System de Rúbra</h1>
+        <h1>Design System de Cure</h1>
         <p>
           Documentación viva de los tokens y componentes de la interfaz. La identidad
           se construye con cuatro tonos de rojo, neutros cálidos y una tipografía serif

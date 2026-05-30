@@ -8,9 +8,9 @@ export default function Footer({ onNavigate }) {
           <div className="footer-brand">
             <span className="brand">
               <span className="brand-mark"><Icon name="utensils" size={18} /></span>
-              Rúbra
+              Cure
             </span>
-            <p>Cocina de autor con producto de temporada. Reserva tu mesa y déjate sorprender en cada visita.</p>
+            <p>Cocina de Eli con producto de temporada. Reserva tu mesa y déjate sorprender en cada visita.</p>
           </div>
 
           <div className="footer-col">
@@ -46,7 +46,7 @@ export default function Footer({ onNavigate }) {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 Rúbra. Todos los derechos reservados.</span>
+          <span>© 2026 Cure. Todos los derechos reservados.</span>
           <span>Hecho con React</span>
         </div>
       </div>
