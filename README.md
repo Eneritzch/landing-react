@@ -1,60 +1,59 @@
-# Aurora Café — Landing Page (React)
+# Aforo — Landing de registro para entradas de conciertos (React)
 
-Landing page de una marca de café de especialidad, construida con **React + Vite**.
-Forma parte de un ejercicio comparativo: la [misma landing existe en Vue](../landing-vue)
+Landing page orientada al **registro de usuarios** para comprar entradas de
+conciertos, construida con **React + Vite**. Existe la [misma landing en Vue](../landing-vue)
 con un diseño idéntico.
 
-🔗 **Demo en vivo:** _(se completa tras el despliegue en GitHub Pages)_
+Demo en vivo: _(se completa tras el despliegue en GitHub Pages)_
 
-## ✨ Características
+## Características
 
-- **Diseño responsive** y organizado (mobile, tablet, desktop).
-- **Componentes reutilizables**: `Navbar`, `Hero`, `Features`, `Products`, `Testimonials`, `ContactForm`, `Footer`.
-- **Formulario funcional con validaciones en frontend**: nombre, correo (formato válido) y mensaje (mínimo de caracteres), con mensajes de error en vivo y confirmación de envío.
-- **Navegación clara**: navbar fija con menú hamburguesa en móvil y scroll suave por secciones.
+- **Paleta de 4 tonos de azul sin degradados**, definida con tokens en `:root`.
+- **Sin emojis**: todos los iconos son SVG propios (`src/icons.js` + `Icon`).
+- **Sin líneas comentadas** en el código.
+- **Componentes reutilizables**: `Navbar`, `Hero`, `Benefits`, `Events`, `RegisterForm`, `Footer`, `Icon`.
+- **Pantalla de Design System** (`DesignSystem`) que documenta colores, tipografía, botones, badges, formularios, tarjetas y tokens de forma/espacio.
+- **Formulario de registro validado en frontend**: nombre, correo (formato), ciudad, contraseña (mínimo 8, letras y números), confirmación que coincide y aceptación de términos. Errores en vivo y mensaje de éxito.
+- **Diseño responsive** y navegación clara entre el landing y el Design System.
 
-## 🛠️ Tecnologías
+## Tecnologías
 
-- React 19
-- Vite
-- CSS puro (sistema de diseño con variables, idéntico al de la versión Vue)
+- React 19 + Vite
+- CSS puro con sistema de diseño basado en tokens (idéntico a la versión Vue)
 
-## 🚀 Desarrollo local
+## Desarrollo local
 
 ```bash
-npm install      # instalar dependencias
-npm run dev      # servidor de desarrollo (http://localhost:5173)
-npm run build    # build de producción en /dist
-npm run preview  # previsualizar el build
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-## 🌐 Despliegue en GitHub Pages
+## Despliegue en GitHub Pages
 
-Este repo incluye un workflow de GitHub Actions (`.github/workflows/deploy.yml`)
-que compila y publica automáticamente en cada `push` a `main`.
+Incluye el workflow `.github/workflows/deploy.yml` que compila y publica en cada
+`push` a `main`.
 
-Pasos para activarlo:
-
-1. Crea un repositorio en GitHub y sube este proyecto:
+1. Sube el proyecto a GitHub:
    ```bash
    git remote add origin https://github.com/<usuario>/<repo>.git
    git branch -M main
    git push -u origin main
    ```
-2. En GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Cada `push` a `main` desplegará el sitio. La URL será:
-   `https://<usuario>.github.io/<repo>/`
+2. En GitHub: **Settings → Pages → Source: GitHub Actions**.
+3. URL final: `https://<usuario>.github.io/<repo>/`
 
-> `vite.config.js` usa `base: './'` (rutas relativas), así el sitio funciona
-> en GitHub Pages sin necesidad de codificar el nombre del repositorio.
+`vite.config.js` usa `base: './'` (rutas relativas) para funcionar en GitHub Pages.
 
-## 📁 Estructura
+## Estructura
 
 ```
 src/
-├── components/      # componentes de la interfaz
-├── data.js          # contenido (features, productos, testimonios)
-├── App.jsx          # composición de la página
-├── index.css        # sistema de diseño compartido
-└── main.jsx         # punto de entrada
+├── components/      Navbar, Hero, Benefits, Events, RegisterForm, Footer, Icon, DesignSystem
+├── data.js          contenido (beneficios, eventos, ciudades)
+├── icons.js         set de iconos SVG
+├── index.css        sistema de diseño compartido (tokens en :root)
+├── App.jsx          composición y navegación landing / design system
+└── main.jsx         punto de entrada
 ```

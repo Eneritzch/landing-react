@@ -1,23 +1,33 @@
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Products from "./components/Products";
-import Testimonials from "./components/Testimonials";
-import ContactForm from "./components/ContactForm";
+import Benefits from "./components/Benefits";
+import Events from "./components/Events";
+import RegisterForm from "./components/RegisterForm";
 import Footer from "./components/Footer";
+import DesignSystem from "./components/DesignSystem";
 
 export default function App() {
+  const [view, setView] = useState("landing");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [view]);
+
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Products />
-        <Testimonials />
-        <ContactForm />
-      </main>
-      <Footer />
+      <Navbar onNavigate={setView} onBrand={() => setView("landing")} />
+      {view === "landing" ? (
+        <main>
+          <Hero />
+          <Benefits />
+          <Events />
+          <RegisterForm />
+        </main>
+      ) : (
+        <DesignSystem onNavigate={setView} />
+      )}
+      <Footer onNavigate={setView} />
     </>
   );
 }

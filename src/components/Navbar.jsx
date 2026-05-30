@@ -1,35 +1,49 @@
 import { useState } from "react";
 import { navLinks } from "../data";
+import Icon from "./Icon";
 
-export default function Navbar() {
+export default function Navbar({ onNavigate, onBrand }) {
   const [open, setOpen] = useState(false);
+
+  function goHome() {
+    onNavigate("landing");
+    setOpen(false);
+  }
 
   return (
     <header className="navbar">
       <div className="container nav-inner">
-        <a href="#top" className="nav-logo">
-          <span className="dot" /> Aurora<span style={{ color: "var(--accent-dark)" }}>Café</span>
-        </a>
+        <button className="brand" onClick={() => { onBrand(); setOpen(false); }}>
+          <span className="brand-mark"><Icon name="ticket" size={20} /></span>
+          Aforo
+        </button>
 
         <nav>
           <ul className={`nav-links ${open ? "open" : ""}`}>
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
+                <a href={l.href} onClick={goHome}>{l.label}</a>
               </li>
             ))}
+            <li>
+              <button className="nav-link-btn" onClick={() => { onNavigate("design"); setOpen(false); }}>
+                Design System
+              </button>
+            </li>
           </ul>
         </nav>
 
         <div className="nav-actions">
-          <a href="#contact" className="btn btn-primary nav-cta-desktop">Pre-ordenar</a>
+          <a href="#registro" className="btn btn-primary btn-sm nav-cta-desktop" onClick={goHome}>
+            Crear cuenta
+          </a>
           <button
             className="nav-toggle"
-            aria-label="Abrir menú"
+            aria-label="Abrir menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? "✕" : "☰"}
+            <Icon name={open ? "close" : "menu"} />
           </button>
         </div>
       </div>

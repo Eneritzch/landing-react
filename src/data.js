@@ -1,29 +1,69 @@
-// Centralized content for the Aurora Café landing page (React version)
-
-export const features = [
-  { icon: "🌱", title: "Origen único", text: "Granos de fincas seleccionadas en altura, cosechados a mano y trazables hasta el productor." },
-  { icon: "🔥", title: "Tueste artesanal", text: "Tostamos en lotes pequeños cada semana para conservar aromas frescos y vivos." },
-  { icon: "🚚", title: "Envío 48h", text: "Recibe tu café recién tostado en la puerta de tu casa en menos de dos días." },
-  { icon: "♻️", title: "Empaque eco", text: "Bolsas compostables y un programa de reciclaje para cada compra que realizas." },
-  { icon: "⭐", title: "Calidad 86+", text: "Cafés puntuados sobre 86 puntos por catadores Q-Graders certificados." },
-  { icon: "💛", title: "Comercio justo", text: "Pagamos precios justos directamente a las familias caficultoras." },
-];
-
-export const products = [
-  { emoji: "☕", tag: "Más vendido", name: "Aurora Clásico", desc: "Notas a chocolate, caramelo y un final suave. Ideal para cada mañana.", price: "$12", unit: "/ 340g" },
-  { emoji: "🫘", tag: "Edición limitada", name: "Geisha de Altura", desc: "Floral y afrutado, con notas a jazmín y durazno. Para paladares curiosos.", price: "$24", unit: "/ 250g" },
-  { emoji: "🍫", tag: "Intenso", name: "Tueste Oscuro", desc: "Cuerpo profundo, notas a cacao y nuez. Perfecto para espresso.", price: "$14", unit: "/ 340g" },
-];
-
-export const testimonials = [
-  { stars: "★★★★★", quote: "El mejor café que he probado en casa. El aroma llena toda la cocina cada mañana.", name: "María Gómez", role: "Cliente desde 2023", initial: "M" },
-  { stars: "★★★★★", quote: "La Geisha de Altura es una experiencia. Se nota la frescura del tueste en cada taza.", name: "Carlos Ruiz", role: "Barista aficionado", initial: "C" },
-  { stars: "★★★★★", quote: "Pedido entregado en 24h y empaque impecable. Volveré a comprar sin duda.", name: "Lucía Andrade", role: "Cliente verificada", initial: "L" },
-];
-
 export const navLinks = [
-  { href: "#features", label: "Beneficios" },
-  { href: "#products", label: "Productos" },
-  { href: "#testimonials", label: "Opiniones" },
-  { href: "#contact", label: "Contacto" },
+  { href: "#beneficios", label: "Beneficios" },
+  { href: "#eventos", label: "Eventos" },
+  { href: "#registro", label: "Registro" },
 ];
+
+export const benefits = [
+  {
+    icon: "bolt",
+    title: "Acceso anticipado",
+    text: "Tu cuenta te da entrada a la preventa exclusiva antes que al publico general.",
+  },
+  {
+    icon: "shield",
+    title: "Pago seguro",
+    text: "Procesamos cada compra con cifrado de extremo a extremo y verificacion antifraude.",
+  },
+  {
+    icon: "qr",
+    title: "Entrada digital",
+    text: "Recibe tu codigo QR al instante en tu cuenta, listo para escanear en la puerta.",
+  },
+  {
+    icon: "refresh",
+    title: "Reembolso flexible",
+    text: "Cancela y recupera tu dinero hasta 48 horas antes de que empiece el evento.",
+  },
+];
+
+export const events = [
+  {
+    day: "12",
+    month: "Jul",
+    title: "Nova Sound Fest",
+    venue: "Estadio Olimpico",
+    city: "Quito",
+    time: "19:00",
+    price: "45",
+    tag: "Preventa",
+  },
+  {
+    day: "03",
+    month: "Ago",
+    title: "Ritmo Urbano Live",
+    venue: "Arena Central",
+    city: "Guayaquil",
+    time: "20:30",
+    price: "38",
+    tag: "Ultimas",
+  },
+  {
+    day: "21",
+    month: "Ago",
+    title: "Sinfonia Electronica",
+    venue: "Teatro Metropolitano",
+    city: "Cuenca",
+    time: "21:00",
+    price: "52",
+    tag: "Nuevo",
+  },
+];
+
+export const registerPerks = [
+  "Preventa 24h antes que el publico general",
+  "Historial de compras y entradas en un solo lugar",
+  "Alertas de nuevos eventos en tu ciudad",
+];
+
+export const cities = ["Quito", "Guayaquil", "Cuenca", "Ambato", "Manta"];
