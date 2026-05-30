@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Benefits from "./components/Benefits";
-import Events from "./components/Events";
-import RegisterForm from "./components/RegisterForm";
+import Experience from "./components/Experience";
+import Menu from "./components/Menu";
+import ReservationForm from "./components/ReservationForm";
 import Footer from "./components/Footer";
 import DesignSystem from "./components/DesignSystem";
 
@@ -16,13 +16,13 @@ export default function App() {
 
   return (
     <>
-      <Navbar onNavigate={setView} onBrand={() => setView("landing")} />
+      <Navbar onNavigate={setView} />
       {view === "landing" ? (
         <main>
           <Hero />
-          <Benefits />
-          <Events />
-          <RegisterForm />
+          <Experience />
+          <Menu />
+          <ReservationForm />
         </main>
       ) : (
         <DesignSystem onNavigate={setView} />

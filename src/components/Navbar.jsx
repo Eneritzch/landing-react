@@ -2,7 +2,7 @@ import { useState } from "react";
 import { navLinks } from "../data";
 import Icon from "./Icon";
 
-export default function Navbar({ onNavigate, onBrand }) {
+export default function Navbar({ onNavigate }) {
   const [open, setOpen] = useState(false);
 
   function goHome() {
@@ -13,9 +13,9 @@ export default function Navbar({ onNavigate, onBrand }) {
   return (
     <header className="navbar">
       <div className="container nav-inner">
-        <button className="brand" onClick={() => { onBrand(); setOpen(false); }}>
-          <span className="brand-mark"><Icon name="ticket" size={20} /></span>
-          Aforo
+        <button className="brand" onClick={goHome}>
+          <span className="brand-mark"><Icon name="utensils" size={18} /></span>
+          Rúbra
         </button>
 
         <nav>
@@ -34,8 +34,8 @@ export default function Navbar({ onNavigate, onBrand }) {
         </nav>
 
         <div className="nav-actions">
-          <a href="#registro" className="btn btn-primary btn-sm nav-cta-desktop" onClick={goHome}>
-            Crear cuenta
+          <a href="#reservar" className="btn btn-primary btn-sm nav-cta-desktop" onClick={goHome}>
+            Reservar
           </a>
           <button
             className="nav-toggle"

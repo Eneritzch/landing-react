@@ -5,48 +5,51 @@ export default function Hero() {
     <section className="hero" id="inicio">
       <div className="container hero-inner">
         <div>
-          <span className="eyebrow">Entradas de conciertos</span>
+          <span className="eyebrow">Cocina de autor</span>
           <h1>
-            Crea tu cuenta y asegura tu lugar en el <span className="hl">próximo concierto</span>
+            Reserva tu mesa y vive una <span className="hl">velada memorable</span>
           </h1>
           <p className="hero-sub">
-            Regístrate en Aforo para comprar entradas con preventa exclusiva,
-            pago seguro y tu acceso digital listo al instante.
+            En Rúbra cuidamos cada detalle: producto de temporada, maridajes
+            precisos y un ambiente íntimo. Asegura tu lugar en pocos segundos.
           </p>
           <div className="hero-cta">
-            <a href="#registro" className="btn btn-primary">Crear cuenta gratis</a>
-            <a href="#eventos" className="btn btn-ghost">Ver eventos</a>
+            <a href="#reservar" className="btn btn-primary">Reservar mesa</a>
+            <a href="#menu" className="btn btn-ghost">Ver el menú</a>
           </div>
           <div className="hero-points">
-            <span className="hero-point"><span className="ic"><Icon name="check" size={16} /></span> Sin costos ocultos</span>
-            <span className="hero-point"><span className="ic"><Icon name="check" size={16} /></span> Preventa exclusiva</span>
-            <span className="hero-point"><span className="ic"><Icon name="check" size={16} /></span> Entrada con QR</span>
+            <span className="hero-point"><span className="ic"><Icon name="check" size={18} /></span> Confirmación inmediata</span>
+            <span className="hero-point"><span className="ic"><Icon name="check" size={18} /></span> Sin costo de reserva</span>
           </div>
         </div>
 
-        <div className="ticket" aria-hidden="true">
-          <div className="ticket-top">
-            <span className="badge">Preventa</span>
-            <h3>Nova Sound Fest</h3>
-            <span>Estadio Olímpico · Quito</span>
+        <div className="rescard" aria-hidden="true">
+          <div className="rescard-bar" />
+          <div className="rescard-top">
+            <span className="name">Rúbra</span>
+            <span className="badge">Confirmada</span>
           </div>
-          <div className="ticket-perf" />
-          <div className="ticket-body">
-            <div className="ticket-field">
+          <div className="rescard-body">
+            <div className="rescard-field">
               <span>Fecha</span>
-              <strong>12 Jul · 19:00</strong>
+              <strong>Vie 12 Jun</strong>
             </div>
-            <div className="ticket-field">
-              <span>Zona</span>
-              <strong>General A</strong>
+            <div className="rescard-field">
+              <span>Hora</span>
+              <strong>20:30</strong>
             </div>
-            <div className="ticket-field">
-              <span>Precio</span>
-              <strong>$45</strong>
+            <div className="rescard-field">
+              <span>Personas</span>
+              <strong>4</strong>
             </div>
-            <div className="ticket-qr">
-              <Icon name="qr" size={56} />
+            <div className="rescard-field">
+              <span>Mesa</span>
+              <strong>Salón principal</strong>
             </div>
+          </div>
+          <div className="rescard-foot">
+            <span>Reserva #RB-2048</span>
+            <span>A nombre de Ana P.</span>
           </div>
         </div>
       </div>

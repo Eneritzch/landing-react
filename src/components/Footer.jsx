@@ -7,27 +7,27 @@ export default function Footer({ onNavigate }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <span className="brand">
-              <span className="brand-mark"><Icon name="ticket" size={20} /></span>
-              Aforo
+              <span className="brand-mark"><Icon name="utensils" size={18} /></span>
+              Rúbra
             </span>
-            <p>La plataforma para registrarte, comprar entradas y guardar tu acceso digital a los mejores conciertos.</p>
+            <p>Cocina de autor con producto de temporada. Reserva tu mesa y déjate sorprender en cada visita.</p>
           </div>
 
           <div className="footer-col">
-            <h4>Plataforma</h4>
+            <h4>Restaurante</h4>
             <ul>
-              <li><a href="#beneficios">Beneficios</a></li>
-              <li><a href="#eventos">Eventos</a></li>
-              <li><a href="#registro">Crear cuenta</a></li>
+              <li><a href="#experiencia">Experiencia</a></li>
+              <li><a href="#menu">Menú</a></li>
+              <li><a href="#reservar">Reservar</a></li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h4>Soporte</h4>
+            <h4>Visítanos</h4>
             <ul>
-              <li><a href="#registro">Centro de ayuda</a></li>
-              <li><a href="#registro">Reembolsos</a></li>
-              <li><a href="#registro">Contacto</a></li>
+              <li><a href="#reservar">Av. de la Cocina 123, Quito</a></li>
+              <li><a href="#reservar">+593 99 123 4567</a></li>
+              <li><a href="#reservar">Mar a Dom, 13:00 - 23:00</a></li>
             </ul>
           </div>
 
@@ -35,7 +35,7 @@ export default function Footer({ onNavigate }) {
             <h4>Recursos</h4>
             <ul>
               <li>
-                <button className="nav-link-btn" onClick={() => onNavigate("design")} style={{ color: "var(--blue-100)" }}>
+                <button className="nav-link-btn" onClick={() => onNavigate("design")} style={{ color: "var(--red-100)" }}>
                   Design System
                 </button>
               </li>
@@ -46,7 +46,7 @@ export default function Footer({ onNavigate }) {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2026 Aforo. Todos los derechos reservados.</span>
+          <span>© 2026 Rúbra. Todos los derechos reservados.</span>
           <span>Hecho con React</span>
         </div>
       </div>

@@ -1,69 +1,65 @@
 export const navLinks = [
-  { href: "#beneficios", label: "Beneficios" },
-  { href: "#eventos", label: "Eventos" },
-  { href: "#registro", label: "Registro" },
+  { href: "#experiencia", label: "Experiencia" },
+  { href: "#menu", label: "Menú" },
+  { href: "#reservar", label: "Reservar" },
 ];
 
-export const benefits = [
+export const experience = [
   {
-    icon: "bolt",
-    title: "Acceso anticipado",
-    text: "Tu cuenta te da entrada a la preventa exclusiva antes que al publico general.",
+    icon: "utensils",
+    title: "Cocina de autor",
+    text: "Un menú de temporada creado por nuestro chef, que cambia con cada cosecha.",
   },
   {
-    icon: "shield",
-    title: "Pago seguro",
-    text: "Procesamos cada compra con cifrado de extremo a extremo y verificacion antifraude.",
+    icon: "leaf",
+    title: "Producto local",
+    text: "Ingredientes frescos seleccionados cada mañana con productores cercanos.",
   },
   {
-    icon: "qr",
-    title: "Entrada digital",
-    text: "Recibe tu codigo QR al instante en tu cuenta, listo para escanear en la puerta.",
-  },
-  {
-    icon: "refresh",
-    title: "Reembolso flexible",
-    text: "Cancela y recupera tu dinero hasta 48 horas antes de que empiece el evento.",
+    icon: "wine",
+    title: "Maridaje de vinos",
+    text: "Una carta de etiquetas escogidas para acompañar cada plato de la casa.",
   },
 ];
 
-export const events = [
+export const dishes = [
   {
-    day: "12",
-    month: "Jul",
-    title: "Nova Sound Fest",
-    venue: "Estadio Olimpico",
-    city: "Quito",
-    time: "19:00",
-    price: "45",
-    tag: "Preventa",
+    name: "Carpaccio de remolacha",
+    desc: "Remolacha asada, queso de cabra, nueces tostadas y reducción balsámica.",
+    price: "12",
+    tag: "Entrada",
   },
   {
-    day: "03",
-    month: "Ago",
-    title: "Ritmo Urbano Live",
-    venue: "Arena Central",
-    city: "Guayaquil",
-    time: "20:30",
-    price: "38",
-    tag: "Ultimas",
+    name: "Risotto de hongos",
+    desc: "Arroz carnaroli, hongos de temporada, parmesano curado y aceite de trufa.",
+    price: "18",
+    tag: "Principal",
   },
   {
-    day: "21",
-    month: "Ago",
-    title: "Sinfonia Electronica",
-    venue: "Teatro Metropolitano",
-    city: "Cuenca",
-    time: "21:00",
-    price: "52",
-    tag: "Nuevo",
+    name: "Cordero a la brasa",
+    desc: "Costillar de cordero, puré de raíz ahumada y jugo de romero.",
+    price: "26",
+    tag: "Principal",
+  },
+  {
+    name: "Tarta tibia de chocolate",
+    desc: "Corazón de chocolate amargo, helado de vainilla y crocante de avellana.",
+    price: "10",
+    tag: "Postre",
   },
 ];
 
-export const registerPerks = [
-  "Preventa 24h antes que el publico general",
-  "Historial de compras y entradas en un solo lugar",
-  "Alertas de nuevos eventos en tu ciudad",
+export const reservePerks = [
+  "Confirmación inmediata de tu mesa",
+  "Cancela sin costo hasta 3 horas antes",
+  "Mantenemos tu mesa 15 minutos de cortesía",
 ];
 
-export const cities = ["Quito", "Guayaquil", "Cuenca", "Ambato", "Manta"];
+export const guestOptions = ["1", "2", "3", "4", "5", "6", "7", "8 o más"];
+
+export const timeSlots = [
+  "13:00", "13:30", "14:00", "14:30",
+  "19:00", "19:30", "20:00", "20:30", "21:00", "21:30",
+];
+
+export const occasions = ["Cena casual", "Cumpleaños", "Aniversario", "Negocios", "Otra"];
