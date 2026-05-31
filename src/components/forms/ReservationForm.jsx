@@ -58,17 +58,24 @@ export default function ReservationForm() {
   const [touched, setTouched] = useState({});
   const [done, setDone] = useState(false);
 
+  function visible(allErrors, touchedMap) {
+    return Object.fromEntries(
+      Object.entries(allErrors).filter(([field]) => touchedMap[field])
+    );
+  }
+
   function handleChange(e) {
     const { name, value } = e.target;
     const next = { ...values, [name]: value };
     setValues(next);
-    if (touched[name]) setErrors(validate(next));
+    if (touched[name]) setErrors(visible(validate(next), touched));
   }
 
   function handleBlur(e) {
     const { name } = e.target;
-    setTouched((t) => ({ ...t, [name]: true }));
-    setErrors(validate(values));
+    const nextTouched = { ...touched, [name]: true };
+    setTouched(nextTouched);
+    setErrors(visible(validate(values), nextTouched));
   }
 
   function handleSubmit(e) {
