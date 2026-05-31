@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
 import Menu from "./components/Menu";
-import ReservationForm from "./components/ReservationForm";
+import ReservationForm from "./components/forms/ReservationForm";
 import Footer from "./components/Footer";
 import DesignSystem from "./components/DesignSystem";
 
