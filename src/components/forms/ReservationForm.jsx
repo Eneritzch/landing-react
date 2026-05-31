@@ -3,7 +3,7 @@ import { reservePerks, guestOptions, timeSlots, occasions } from "../../data";
 import Icon from "../Icon";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_RE = /^[0-9+\s-]{7,}$/;
+const PHONE_RE = /^\d{10}$/;
 
 function today() {
   const d = new Date();
@@ -31,8 +31,8 @@ function validate(v) {
 
   if (!v.phone.trim()) {
     errors.phone = "Ingresa un teléfono de contacto.";
-  } else if (!PHONE_RE.test(v.phone.trim())) {
-    errors.phone = "Ingresa un teléfono válido (mínimo 7 dígitos).";
+  } else if (!PHONE_RE.test(v.phone.replace(/\D/g, ""))) {
+    errors.phone = "Ingresa un teléfono válido de Ecuador (10 dígitos).";
   }
 
   if (!v.date) {
@@ -131,7 +131,7 @@ export default function ReservationForm() {
             <div className="form-group">
               <label className="form-label" htmlFor="phone">Teléfono</label>
               <input id="phone" name="phone" type="tel" className={`form-control ${errors.phone ? "invalid" : ""}`}
-                placeholder="+593 99 123 4567" value={values.phone} onChange={handleChange} onBlur={handleBlur} />
+                placeholder="0991234567" value={values.phone} onChange={handleChange} onBlur={handleBlur} />
               {errors.phone && <span className="form-error">{errors.phone}</span>}
             </div>
 
