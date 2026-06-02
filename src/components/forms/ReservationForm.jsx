@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { reservePerks, guestOptions, timeSlots, occasions } from "../../data";
 import Icon from "../Icon";
+import TextField from "../ui/TextField";
+import SelectField from "../ui/SelectField";
+import Button from "../ui/Button";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\d{10}$/;
@@ -113,72 +116,102 @@ export default function ReservationForm() {
             </div>
           )}
 
-          <div className="form-group full">
-            <label className="form-label" htmlFor="name">Nombre completo</label>
-            <input id="name" name="name" type="text" className={`form-control ${errors.name ? "invalid" : ""}`}
-              placeholder="Ej. Ana Pérez" value={values.name} onChange={handleChange} onBlur={handleBlur} />
-            {errors.name && <span className="form-error">{errors.name}</span>}
-          </div>
+          <TextField
+            id="name"
+            name="name"
+            label="Nombre completo"
+            placeholder="Ej. Ana Pérez"
+            value={values.name}
+            error={errors.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className="full"
+          />
 
           <div className="form-grid">
-            <div className="form-group">
-              <label className="form-label" htmlFor="email">Correo electrónico</label>
-              <input id="email" name="email" type="email" className={`form-control ${errors.email ? "invalid" : ""}`}
-                placeholder="tucorreo@ejemplo.com" value={values.email} onChange={handleChange} onBlur={handleBlur} />
-              {errors.email && <span className="form-error">{errors.email}</span>}
-            </div>
+            <TextField
+              id="email"
+              name="email"
+              type="email"
+              label="Correo electrónico"
+              placeholder="tucorreo@ejemplo.com"
+              value={values.email}
+              error={errors.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
 
-            <div className="form-group">
-              <label className="form-label" htmlFor="phone">Teléfono</label>
-              <input id="phone" name="phone" type="tel" className={`form-control ${errors.phone ? "invalid" : ""}`}
-                placeholder="0991234567" value={values.phone} onChange={handleChange} onBlur={handleBlur} />
-              {errors.phone && <span className="form-error">{errors.phone}</span>}
-            </div>
+            <TextField
+              id="phone"
+              name="phone"
+              type="tel"
+              label="Teléfono"
+              placeholder="0991234567"
+              value={values.phone}
+              error={errors.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
 
-            <div className="form-group">
-              <label className="form-label" htmlFor="date">Fecha</label>
-              <input id="date" name="date" type="date" min={today()} className={`form-control ${errors.date ? "invalid" : ""}`}
-                value={values.date} onChange={handleChange} onBlur={handleBlur} />
-              {errors.date && <span className="form-error">{errors.date}</span>}
-            </div>
+            <TextField
+              id="date"
+              name="date"
+              type="date"
+              label="Fecha"
+              min={today()}
+              value={values.date}
+              error={errors.date}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
 
-            <div className="form-group">
-              <label className="form-label" htmlFor="time">Horario</label>
-              <select id="time" name="time" className={`form-control ${errors.time ? "invalid" : ""}`}
-                value={values.time} onChange={handleChange} onBlur={handleBlur}>
-                <option value="">Selecciona una hora</option>
-                {timeSlots.map((t) => <option key={t} value={t}>{t}</option>)}
-              </select>
-              {errors.time && <span className="form-error">{errors.time}</span>}
-            </div>
+            <SelectField
+              id="time"
+              name="time"
+              label="Horario"
+              placeholder="Selecciona una hora"
+              options={timeSlots}
+              value={values.time}
+              error={errors.time}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
 
-            <div className="form-group">
-              <label className="form-label" htmlFor="guests">Personas</label>
-              <select id="guests" name="guests" className={`form-control ${errors.guests ? "invalid" : ""}`}
-                value={values.guests} onChange={handleChange} onBlur={handleBlur}>
-                <option value="">¿Cuántos asistirán?</option>
-                {guestOptions.map((g) => <option key={g} value={g}>{g}</option>)}
-              </select>
-              {errors.guests && <span className="form-error">{errors.guests}</span>}
-            </div>
+            <SelectField
+              id="guests"
+              name="guests"
+              label="Personas"
+              placeholder="¿Cuántos asistirán?"
+              options={guestOptions}
+              value={values.guests}
+              error={errors.guests}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
 
-            <div className="form-group">
-              <label className="form-label" htmlFor="occasion">Ocasión (opcional)</label>
-              <select id="occasion" name="occasion" className="form-control"
-                value={values.occasion} onChange={handleChange}>
-                <option value="">Sin especificar</option>
-                {occasions.map((o) => <option key={o} value={o}>{o}</option>)}
-              </select>
-            </div>
+            <SelectField
+              id="occasion"
+              name="occasion"
+              label="Ocasión (opcional)"
+              placeholder="Sin especificar"
+              options={occasions}
+              value={values.occasion}
+              onChange={handleChange}
+            />
           </div>
 
-          <div className="form-group full">
-            <label className="form-label" htmlFor="notes">Notas para el restaurante (opcional)</label>
-            <textarea id="notes" name="notes" className="form-control"
-              placeholder="Alergias, silla para bebé, mesa junto a la ventana..." value={values.notes} onChange={handleChange} />
-          </div>
+          <TextField
+            id="notes"
+            name="notes"
+            type="textarea"
+            label="Notas para el restaurante (opcional)"
+            placeholder="Alergias, silla para bebé, mesa junto a la ventana..."
+            value={values.notes}
+            onChange={handleChange}
+            className="full"
+          />
 
-          <button type="submit" className="btn btn-primary btn-block">Confirmar reserva</button>
+          <Button type="submit" className="btn-block">Confirmar reserva</Button>
         </form>
       </div>
     </section>

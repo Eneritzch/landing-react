@@ -1,4 +1,9 @@
 import Icon from "./Icon";
+import Button from "./ui/Button";
+import Badge from "./ui/Badge";
+import Card from "./ui/Card";
+import TextField from "./ui/TextField";
+import SelectField from "./ui/SelectField";
 
 const reds = [
   { token: "--red-900", hex: "#38090C", name: "Rojo 900" },
@@ -99,11 +104,11 @@ export default function DesignSystem({ onNavigate }) {
         <h2>Botones</h2>
         <p>Tres variantes y un estado deshabilitado, con esquinas sutiles para un acabado limpio.</p>
         <div className="ds-row">
-          <button className="btn btn-primary">Primario</button>
-          <button className="btn btn-secondary">Secundario</button>
-          <button className="btn btn-ghost">Contorno</button>
-          <button className="btn btn-primary btn-sm">Pequeño</button>
-          <button className="btn btn-primary" disabled>Deshabilitado</button>
+          <Button variant="primary">Primario</Button>
+          <Button variant="secondary">Secundario</Button>
+          <Button variant="ghost">Contorno</Button>
+          <Button variant="primary" size="sm">Pequeño</Button>
+          <Button variant="primary" disabled>Deshabilitado</Button>
         </div>
       </section>
 
@@ -111,9 +116,9 @@ export default function DesignSystem({ onNavigate }) {
         <h2>Etiquetas</h2>
         <p>Badges para clasificar los platos del menú y estados de la reserva.</p>
         <div className="ds-row">
-          <span className="badge">Entrada</span>
-          <span className="badge">Postre</span>
-          <span className="badge badge-solid">Confirmada</span>
+          <Badge>Entrada</Badge>
+          <Badge>Postre</Badge>
+          <Badge variant="solid">Confirmada</Badge>
         </div>
       </section>
 
@@ -121,23 +126,9 @@ export default function DesignSystem({ onNavigate }) {
         <h2>Campos de formulario</h2>
         <p>Estados por defecto, foco, error y selección. Mismos controles usados en la reserva.</p>
         <div className="ds-panel" style={{ maxWidth: "560px" }}>
-          <div className="form-group">
-            <label className="form-label">Campo de texto</label>
-            <input className="form-control" placeholder="Escribe aquí" defaultValue="Ana Pérez" />
-          </div>
-          <div className="form-group">
-            <label className="form-label">Campo con error</label>
-            <input className="form-control invalid" defaultValue="correo-invalido" />
-            <span className="form-error">El correo no tiene un formato válido.</span>
-          </div>
-          <div className="form-group">
-            <label className="form-label">Selector</label>
-            <select className="form-control" defaultValue="">
-              <option value="">Selecciona una opción</option>
-              <option>2 personas</option>
-              <option>4 personas</option>
-            </select>
-          </div>
+          <TextField label="Campo de texto" placeholder="Escribe aquí" defaultValue="Ana Pérez" />
+          <TextField label="Campo con error" error="El correo no tiene un formato válido." defaultValue="correo-invalido" />
+          <SelectField label="Selector" placeholder="Selecciona una opción" options={["2 personas", "4 personas"]} defaultValue="" />
           <label className="form-check">
             <input type="checkbox" defaultChecked />
             <span>Casilla de confirmación de datos</span>
@@ -149,11 +140,11 @@ export default function DesignSystem({ onNavigate }) {
         <h2>Componentes de contenido</h2>
         <p>Tarjeta de experiencia e ítem de menú, reutilizados en el landing.</p>
         <div className="grid-3">
-          <article className="exp-card">
-            <span className="exp-icon"><Icon name="wine" size={28} /></span>
-            <h3>Tarjeta de experiencia</h3>
-            <p>Icono, título serif y descripción breve, centrados.</p>
-          </article>
+          <Card
+            title="Tarjeta de experiencia"
+            description="Icono, título serif y descripción breve, centrados."
+            icon={<Icon name="wine" size={28} />}
+          />
         </div>
         <div className="menu-list" style={{ marginTop: "32px" }}>
           <article className="menu-item">
@@ -163,7 +154,7 @@ export default function DesignSystem({ onNavigate }) {
               <span className="menu-price">$18</span>
             </div>
             <p className="menu-desc">Nombre del plato, línea de puntos, precio y descripción debajo.</p>
-            <span className="badge">Principal</span>
+            <Badge>Principal</Badge>
           </article>
         </div>
       </section>

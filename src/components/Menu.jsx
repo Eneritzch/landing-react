@@ -1,4 +1,6 @@
 import { dishes } from "../data";
+import Badge from "./ui/Badge";
+import Button from "./ui/Button";
 
 export default function Menu() {
   return (
@@ -20,13 +22,13 @@ export default function Menu() {
                 <span className="menu-price">${d.price}</span>
               </div>
               <p className="menu-desc">{d.desc}</p>
-              <span className="badge">{d.tag}</span>
+              <Badge>{d.tag}</Badge>
             </article>
           ))}
         </div>
 
         <div className="menu-foot">
-          <a href="#reservar" className="btn btn-primary">Reservar mesa</a>
+          <Button as="a" href="#reservar" variant="primary">Reservar mesa</Button>
         </div>
       </div>
     </section>

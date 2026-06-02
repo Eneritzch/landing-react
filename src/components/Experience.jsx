@@ -1,5 +1,6 @@
 import { experience } from "../data";
 import Icon from "./Icon";
+import Card from "./ui/Card";
 
 export default function Experience() {
   return (
@@ -14,11 +15,12 @@ export default function Experience() {
 
         <div className="grid-3">
           {experience.map((e) => (
-            <article className="exp-card" key={e.title}>
-              <span className="exp-icon"><Icon name={e.icon} size={28} /></span>
-              <h3>{e.title}</h3>
-              <p>{e.text}</p>
-            </article>
+            <Card
+              key={e.title}
+              title={e.title}
+              description={e.text}
+              icon={<Icon name={e.icon} size={28} />}
+            />
           ))}
         </div>
       </div>
